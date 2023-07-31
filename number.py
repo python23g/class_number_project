@@ -4,37 +4,23 @@ class Number:
 
 
     def get_number(self):
-        """
-        Returns the number.
+        return self.value
 
-        returns: int
-        """
-        pass
+    
+        
+      
+    def is_odd(self) :
+        return self.value % 2 != 0
 
-    def is_odd(self):
-        """
-        Returns True if the number is odd, otherwise False.
 
-        returns: bool
-
-        """
-        pass
 
     def is_even(self):
-        """
-        Returns True if the number is even, otherwise False. 
 
-        returns: bool
-        """
-        pass
+        return not self.is_odd()
 
     def is_prime(self):
-        """
-        Returns True if the number is prime, otherwise False.
-
-        returns: bool
-        """
-        pass
+        return len(self.get_divisors()) == 2
+    
 
     def get_divisors(self):
         """
@@ -42,7 +28,11 @@ class Number:
 
         returns: list
         """
-        pass
+        divisors = []
+        for i in range(1,self.value + 1):
+            if self.value % i ==  0:
+                divisors.append(i)
+                return divisors
 
     def get_length(self):
         """
@@ -50,7 +40,7 @@ class Number:
 
         returns: int
         """
-        pass
+        return len(self.get_divisors()) == 6
 
     def get_sum(self):
         """
@@ -58,7 +48,7 @@ class Number:
 
         returns: int
         """
-        pass
+        pass 
 
     def get_reverse(self):
         """
@@ -74,7 +64,7 @@ class Number:
 
         returns: bool
         """
-        pass
+        pass 
 
     def get_digits(self):
         """
@@ -135,3 +125,5 @@ class Number:
 
 # Create a new instance of Number
 number = Number(3)
+
+print(number.get_divisors())
